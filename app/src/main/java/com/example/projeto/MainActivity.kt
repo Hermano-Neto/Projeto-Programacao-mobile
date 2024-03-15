@@ -15,5 +15,12 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.hide()
         window.statusBarColor = Color.parseColor("#FF000000")
 
+        Handler(Looper.getMainLooper()).postDelayed({
+            val intent = Intent(this, TelaLogin::class.java)
+            startActivity(intent)
+            finish()
+
+        },3000)
+
     }
 }
