@@ -12,7 +12,7 @@
     <ImageView
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:src="@drawable/logo_gato"
+        android:src="@drawable/img_logo_gato"
         android:contentDescription="gato laranja com pão de caixa ao redor da cabeça" />
 
     <TextView
