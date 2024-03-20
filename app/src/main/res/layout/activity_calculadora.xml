@@ -9,10 +9,14 @@
     tools:context=".MainActivity">
 
 
-    <TextView
-        android:layout_width="155dp"
-        android:layout_height="37dp"
-        android:text="Insira os valores"
+    <EditText
+        android:id="@+id/editTextValor"
+        android:layout_width="404dp"
+        android:layout_height="101dp"
+        android:background="@null"
+        android:cursorVisible="true"
+        android:gravity="end"
+        android:textCursorDrawable="@null"
         android:textSize="19sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
