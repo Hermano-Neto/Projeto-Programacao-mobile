@@ -32,10 +32,10 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:background="@drawable/img_botao_apagar"
+        android:onClick="onClickApagar"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="345dp"
-        tools:layout_editor_absoluteY="263dp"
-        android:onClick="onClickApagar">
+        tools:layout_editor_absoluteX="349dp"
+        tools:layout_editor_absoluteY="270dp">
 
     </ImageButton>
 

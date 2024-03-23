@@ -33,10 +33,13 @@ class Calculadora : AppCompatActivity() {
             editTextValor.setText(numero)
         } else if (numero == "," && !textoAtual.contains(".")) {
             editTextValor.append(".")
-        } else {
+        } else if (numero == "," && !textoAtual.contains(",")) {
+            editTextValor.append(".")
+        } else if (numero != ",") {
             editTextValor.append(numero)
         }
     }
+
 
 
     fun onClickOperacao(view: View) {
