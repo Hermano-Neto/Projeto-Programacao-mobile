@@ -40,6 +40,11 @@ class JogoDaVelha : AppCompatActivity() {
         baixoStart = findViewById(R.id.baixoStart)
         baixoEnd =findViewById(R.id.baixoEnd)
 
+        val exitButton: Button = findViewById(R.id.button_exit)
+        exitButton.setOnClickListener {
+            finish()
+
+        }
         val reset: Button = findViewById(R.id.buttom_reset)
         reset.setOnClickListener {
             resetBox(topo)
@@ -74,6 +79,7 @@ class JogoDaVelha : AppCompatActivity() {
         isPlayer1 = true
         gameEnd = false
     }
+
 
     private fun configureBox(box: ImageView){
         box.setOnClickListener {
