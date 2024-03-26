@@ -18,7 +18,7 @@ class TelaLogin : AppCompatActivity() {
         loginButton.setOnClickListener {
             // Aqui você pode iniciar uma nova atividade ou executar qualquer ação desejada
             // Por exemplo, iniciar uma nova atividade após clicar no botão de login
-            val intent = Intent(this, Calculadora::class.java)
+            val intent = Intent(this, Menu::class.java)
             startActivity(intent)
         }
     }
