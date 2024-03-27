@@ -1,5 +1,7 @@
 package com.example.projeto
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -12,6 +14,7 @@ class Calculadora : AppCompatActivity() {
 
     private lateinit var editTextValor: EditText
 
+    @SuppressLint("WrongViewCast")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_calculadora)
@@ -20,6 +23,15 @@ class Calculadora : AppCompatActivity() {
         window.statusBarColor = Color.parseColor("#FF000000")
 
         editTextValor = findViewById(R.id.editTextValor)
+    }
+
+    fun onClickVoltar(view: View) {
+        finish()
+    }
+
+    fun onClickSair(view: View) {
+        val intent = Intent(this, TelaLogin::class.java)
+        startActivity(intent)
     }
 
     fun onClickNumero(view: View) {
@@ -66,16 +78,19 @@ class Calculadora : AppCompatActivity() {
     }
 
     fun onClickIgual(view: View) {
-        val expressao = editTextValor.text.toString()
-        val resultado = calcularResultado(expressao)
+        val expressao = editTextValor.text.toString().trim()
 
-        val resultadoFormatado = if (resultado % 1 == 0.0) {
-            resultado.toInt().toString()  // Se o resultado for um número inteiro, converte para String sem a parte decimal
-        } else {
-            resultado.toString()  // Caso contrário, mantém o resultado como está
+        if (expressao.isNotEmpty()) {
+            val resultado = calcularResultado(expressao)
+
+            val resultadoFormatado = if (resultado % 1 == 0.0) {
+                resultado.toInt().toString()
+            } else {
+                resultado.toString()
+            }
+
+            editTextValor.setText(resultadoFormatado)
         }
-
-        editTextValor.setText(resultadoFormatado)
     }
 
 
